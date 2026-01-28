@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "sourceRepo": "microsoft/TypeScript-Website",
   "sourceCommit": "4c4a3173e3239704ee5194d20456435934e95785",
-  "buildDate": "2026-01-28T17:50:53.324Z",
+  "buildDate": "2026-01-28T19:57:20.691Z",
   "sources": {
     "packages/documentation/copy/en/handbook-v2/Basics.md": {
       "sha256": "c89617a7d260a61a8841f169e1e3c15af3cda5726f3b47218563e9b8870114f1",
@@ -1187,22 +1187,20 @@
   },
   "outputs": {
     "SKILL.md": {
-      "sha256": "421db096f45baee90d26c0248bf1176d48f1ab5c16890b66de7137d01c746c4c",
-      "lines": 128,
-      "generatedFrom": [
-        "template"
-      ]
+      "sha256": "c5b1a43fff219dbacc88ee5f372638b683c7579c96fa37e7fe52e1332f70cc83",
+      "lines": 139,
+      "generatedFrom": []
     },
     "refs/utility-types.md": {
-      "sha256": "397c754e13a4c53237b59b727836a10ec357318dc4cefc824b5334cccb11caa9",
-      "lines": 117,
+      "sha256": "1fdaf3b38e9d23d8903c4ad740b73b5285881e07d50e6ffd2913c91f545645f1",
+      "lines": 248,
       "generatedFrom": [
         "packages/documentation/copy/en/reference/Utility Types.md"
       ]
     },
     "refs/type-system-core.md": {
-      "sha256": "8cb77756045bb7c629bae37a7586d1320ef1fe2ab6f4344f19335ed749f64f1e",
-      "lines": 287,
+      "sha256": "ac8aa06a87a3be869a28485e8a4b05ee68799c1216808ee8ee0aeac012c04710",
+      "lines": 352,
       "generatedFrom": [
         "packages/documentation/copy/en/handbook-v2/Basics.md",
         "packages/documentation/copy/en/handbook-v2/Everyday Types.md",
@@ -1213,8 +1211,8 @@
       ]
     },
     "refs/type-manipulation.md": {
-      "sha256": "0ef0f77682b3121cfddc5b0b4d639e1126d167c2166d6fae984af7bb5ec17a15",
-      "lines": 198,
+      "sha256": "d3a70ca304af597405037e363cf7ad7b4ff67a53f33b2dc7418a93965a18a439",
+      "lines": 212,
       "generatedFrom": [
         "packages/documentation/copy/en/handbook-v2/Type Manipulation/_Creating Types from Types.md",
         "packages/documentation/copy/en/handbook-v2/Type Manipulation/Conditional Types.md",
@@ -1367,8 +1365,8 @@
       ]
     },
     "refs/tsconfig-guide.md": {
-      "sha256": "2ba691e713874034ed41714e504e5ba9f65fd51e6efaea3b0b2c6abf35f540af",
-      "lines": 248,
+      "sha256": "cb57c20a9a52bd66fdf20785c4d57e9050e310d292fb8c919211b935259da9b7",
+      "lines": 40,
       "generatedFrom": [
         "packages/documentation/copy/en/project-config/tsconfig.json.md",
         "packages/documentation/copy/en/project-config/Compiler Options.md",
@@ -1522,8 +1520,8 @@
       ]
     },
     "refs/modules-and-namespaces.md": {
-      "sha256": "7b4091d572ce08a024d4c9b17d2f1161d091d056bb64620d63cc10a3a3ba259d",
-      "lines": 212,
+      "sha256": "af777496e03d1efe6b444b18ec83321594b13111c5a0be3d65198015255fe505",
+      "lines": 299,
       "generatedFrom": [
         "packages/documentation/copy/en/handbook-v2/Modules.md",
         "packages/documentation/copy/en/modules-reference/Introduction.md",
@@ -1534,8 +1532,8 @@
       ]
     },
     "refs/functions-and-classes.md": {
-      "sha256": "e97eac6fab0acb4b482e858089f56d34b3271ed3dede4f7f5776b31a8038e8ee",
-      "lines": 124,
+      "sha256": "ec448ffe7be2bf6bdf9f36c4ac46eead6a2b89f8bc65a13949c09ae149549519",
+      "lines": 398,
       "generatedFrom": [
         "packages/documentation/copy/en/handbook-v2/More on Functions.md",
         "packages/documentation/copy/en/handbook-v2/Classes.md",
@@ -1543,8 +1541,8 @@
       ]
     },
     "refs/declaration-files.md": {
-      "sha256": "866bca5838d843173b84b8b887917097c97ba6ce8a2beb5ac5ac5744db74965d",
-      "lines": 200,
+      "sha256": "dbe8e2c3a71dd12a2b3c46115f6ae83efbeb0579e3c6106b02c05c115c64da20",
+      "lines": 202,
       "generatedFrom": [
         "packages/documentation/copy/en/declaration-files/Introduction.md",
         "packages/documentation/copy/en/declaration-files/By Example.md",
@@ -1556,8 +1554,8 @@
       ]
     },
     "refs/code-review-checklist.md": {
-      "sha256": "7046b8464c0b1f78d8220f01d9a78cfec908d67a0d9c96a8fa7e2fcad3e69095",
-      "lines": 42,
+      "sha256": "dd13af1311fa453050efccfa321de993969c0071c6736217e51a0ee770fa1398",
+      "lines": 102,
       "generatedFrom": [
         "packages/documentation/copy/en/handbook-v2/Basics.md",
         "packages/documentation/copy/en/handbook-v2/Narrowing.md",

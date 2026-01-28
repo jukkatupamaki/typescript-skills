@@ -76,7 +76,8 @@ async function build(): Promise<void> {
   const skillLines = skillContent.split("\n").length;
   console.log(`  SKILL.md: ${skillLines} lines`);
 
-  sourceMappings["SKILL.md"] = { sourceFiles: ["template"] };
+  // SKILL.md is template-generated, not from source docs — no source files to track
+  sourceMappings["SKILL.md"] = { sourceFiles: [] };
 
   // Build and write manifest
   console.log("\nBuilding manifest...");

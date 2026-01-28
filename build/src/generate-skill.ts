@@ -23,6 +23,8 @@ description: >-
   correct tsconfig.json configuration.
 user-invocable: true
 argument-hint: "<create|review|setup> [description]"
+context:
+${refList}
 ---
 
 # TypeScript Skill
@@ -87,23 +89,23 @@ When reviewing TypeScript code:
 3. Check for issues in order of severity:
 
 **Critical** (type safety violations):
-- Use of \`any\` (suggest \`unknown\` + narrowing)
-- Missing \`strict: true\` in tsconfig
-- Type assertions (\`as X\`) hiding real type errors
-- \`@ts-ignore\` without justification (suggest \`@ts-expect-error\`)
+- Use of "any" — suggest "unknown" plus narrowing
+- Missing strict mode in tsconfig
+- Type assertions (as X) hiding real type errors
+- @ts-ignore without justification — suggest @ts-expect-error
 
 **Warning** (code quality):
 - Missing return types on exported functions
-- Enum usage (suggest \`as const\`)
-- Non-null assertions (\`!\`) without guarantees
+- Enum usage — suggest "as const" instead
+- Non-null assertion operator used without guarantees
 - Missing discriminant in union types
 - Barrel files that break tree-shaking
 
 **Info** (improvements):
-- \`type\` used where \`interface\` is more appropriate (or vice versa)
-- Missing \`readonly\` on data that shouldn't mutate
-- Missing \`import type\` for type-only imports
-- Opportunities for utility types (\`Partial\`, \`Pick\`, \`Omit\`, etc.)
+- "type" used where "interface" is more appropriate or vice versa
+- Missing "readonly" on data that should not mutate
+- Missing "import type" for type-only imports
+- Opportunities for utility types (Partial, Pick, Omit, etc.)
 
 4. Format the review as:
 \`\`\`

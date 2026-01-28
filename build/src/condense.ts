@@ -1,121 +1,226 @@
 /**
  * Content condensation engine.
- * Compresses TypeScript documentation into skill-sized reference content.
+ * Extracts code examples, rules, and patterns from TypeScript documentation.
+ * Discards tutorial prose — keeps only what an AI can act on.
  */
 
 import type { Section, CodeBlock, DocFile } from "./extract.js";
-import { cleanTwoslash, stripHtml, getTitle } from "./extract.js";
-import type { ContentPriority } from "./config.js";
+import { cleanTwoslash, stripHtml, stripLinks, getTitle } from "./extract.js";
+
+// --- Types ---
+
+export interface CodeExample {
+  heading: string;
+  code: string;
+  annotation?: "wrong" | "right" | "info";
+  lines: number;
+}
+
+export interface Rule {
+  heading: string;
+  type: "do" | "dont" | "info";
+  text: string;
+}
+
+/** Generic headings that should be replaced by their parent heading */
+const GENERIC_HEADINGS = new Set([
+  "example", "examples", "try", "try it", "usage", "syntax",
+  "description", "details", "see also", "note", "notes",
+]);
 
 /**
- * Condense an entire doc file into a summarized string within a line budget.
+ * Resolve a section's heading: use parent heading if the section heading is generic.
  */
-export function condenseDoc(doc: DocFile, lineBudget: number, priorities: ContentPriority[]): string {
-  const title = getTitle(doc);
-  const sections = doc.sections.filter((s) => s.heading || s.content.trim());
+function resolveHeading(section: { heading: string; parentHeading: string }, fallback: string): string {
+  const heading = stripLinks(section.heading || fallback);
+  if (GENERIC_HEADINGS.has(heading.toLowerCase().replace(/[`#]/g, "").trim())) {
+    const parent = stripLinks(section.parentHeading);
+    if (parent) return parent;
+  }
+  return heading;
+}
 
-  // Allocate budget across sections proportionally
-  const totalContentLines = sections.reduce(
-    (sum, s) => sum + s.content.split("\n").length,
-    0
-  );
+// --- Main extraction ---
 
-  // Reserve 2 lines for title
-  let remaining = lineBudget - 2;
-  const parts: string[] = [`## ${title}`, ""];
+/**
+ * Extract all TypeScript code examples from a doc, tagged with their heading.
+ */
+export function extractCodeExamples(doc: DocFile): CodeExample[] {
+  const examples: CodeExample[] = [];
 
-  for (const section of sections) {
-    if (remaining <= 0) break;
+  for (const section of doc.sections) {
+    const heading = resolveHeading(section, getTitle(doc));
 
-    const sectionLines = section.content.split("\n").length;
-    const sectionBudget = Math.max(
-      3,
-      Math.floor((sectionLines / Math.max(totalContentLines, 1)) * (lineBudget - 2))
-    );
-    const budget = Math.min(sectionBudget, remaining);
+    for (const block of section.codeBlocks) {
+      if (!isTypeScriptBlock(block)) continue;
 
-    const condensed = condenseSection(section, budget, priorities);
-    if (condensed.trim()) {
-      parts.push(condensed);
-      remaining -= condensed.split("\n").length;
+      const cleaned = cleanTwoslash(block.content);
+      if (!cleaned.trim()) continue;
+
+      const annotation = detectAnnotation(block, section.content);
+
+      examples.push({
+        heading,
+        code: cleaned,
+        annotation,
+        lines: cleaned.split("\n").length,
+      });
     }
   }
 
-  return parts.join("\n");
+  return examples;
 }
 
 /**
- * Condense a single section within a line budget.
+ * Extract actionable rules from a doc (do/don't markers, prescriptive list items).
  */
-export function condenseSection(
-  section: Section,
-  budget: number,
-  priorities: ContentPriority[]
+export function extractRules(doc: DocFile): Rule[] {
+  const rules: Rule[] = [];
+
+  for (const section of doc.sections) {
+    const heading = resolveHeading(section, getTitle(doc));
+    const content = stripLinks(stripHtml(section.content));
+    const lines = content.split("\n");
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed) continue;
+
+      // Detect ❌/✅ emoji markers
+      if (trimmed.startsWith("❌") || trimmed.includes("**Don't**") || trimmed.includes("_Don't_")) {
+        rules.push({
+          heading,
+          type: "dont",
+          text: cleanRuleText(trimmed),
+        });
+        continue;
+      }
+
+      if (trimmed.startsWith("✅") || trimmed.match(/^\*\*Do\*\*\s/)) {
+        rules.push({
+          heading,
+          type: "do",
+          text: cleanRuleText(trimmed),
+        });
+        continue;
+      }
+
+      // Detect prescriptive list items: "- Always...", "- Never...", "- Prefer...", "- Avoid...", "- Use X instead..."
+      if (trimmed.match(/^[-*]\s+(Always|Never|Prefer|Avoid|Do not|Don't|Use\s+\S+\s+instead)\b/i)) {
+        rules.push({
+          heading,
+          type: trimmed.match(/^[-*]\s+(Never|Avoid|Do not|Don't)\b/i) ? "dont" : "do",
+          text: cleanRuleText(trimmed),
+        });
+      }
+    }
+  }
+
+  return rules;
+}
+
+/**
+ * Format extracted code examples and rules into a reference file within a line budget.
+ */
+export function formatRefFile(
+  title: string,
+  docs: { doc: DocFile; examples: CodeExample[]; rules: Rule[] }[],
+  maxLines: number
 ): string {
-  const parts: string[] = [];
+  const parts: string[] = [`# ${title}`, ""];
+  let lineCount = 2;
 
-  // Add heading if present
-  if (section.heading) {
-    const prefix = "#".repeat(Math.min(section.level + 1, 4)); // Shift down since doc title is ##
-    parts.push(`${prefix} ${section.heading}`);
+  for (const { doc, examples, rules } of docs) {
+    const docTitle = getTitle(doc);
+
+    // Group examples and rules by heading
+    const headings = new Map<string, { examples: CodeExample[]; rules: Rule[] }>();
+
+    for (const ex of examples) {
+      if (!headings.has(ex.heading)) headings.set(ex.heading, { examples: [], rules: [] });
+      headings.get(ex.heading)!.examples.push(ex);
+    }
+    for (const rule of rules) {
+      if (!headings.has(rule.heading)) headings.set(rule.heading, { examples: [], rules: [] });
+      headings.get(rule.heading)!.rules.push(rule);
+    }
+
+    // Skip docs that yielded nothing
+    if (headings.size === 0) continue;
+
+    // Doc-level heading
+    parts.push(`## ${stripLinks(docTitle)}`);
     parts.push("");
-  }
+    lineCount += 2;
 
-  // Clean and process prose
-  const cleanedContent = stripHtml(section.content);
-  const prose = removeCodeBlocks(cleanedContent);
-  const proseLines = prose.split("\n").filter((l) => l.trim());
+    for (const [heading, group] of headings) {
+      if (lineCount >= maxLines - 5) break;
 
-  // Budget allocation: ~60% prose, ~40% code
-  const proseBudget = Math.floor(budget * 0.6);
-  const codeBudget = budget - proseBudget;
-
-  // Condense prose
-  if (proseLines.length > proseBudget) {
-    // Aggressive: convert to bullet points using first sentence of each paragraph
-    const paragraphs = splitParagraphs(prose);
-    for (const para of paragraphs) {
-      if (parts.length >= proseBudget + 2) break; // +2 for heading
-      const firstSentence = extractFirstSentence(para);
-      if (firstSentence) {
-        parts.push(`- ${firstSentence}`);
-      }
-    }
-  } else {
-    // Fits within budget, keep as-is but trim blank lines
-    for (const line of proseLines) {
-      if (parts.length >= proseBudget + 2) break;
-      parts.push(line);
-    }
-  }
-
-  // Add best code example
-  if (codeBudget > 2) {
-    const bestBlock = selectBestCodeBlock(section.codeBlocks, priorities);
-    if (bestBlock) {
-      const cleaned = cleanTwoslash(bestBlock.content);
-      const codeLines = cleaned.split("\n");
-      if (codeLines.length <= codeBudget - 2) {
+      // Section heading (only if different from doc title)
+      if (heading !== docTitle) {
+        parts.push(`### ${heading}`);
         parts.push("");
-        parts.push(`\`\`\`ts`);
-        parts.push(...codeLines);
+        lineCount += 2;
+      }
+
+      // Rules first (they provide context for the code)
+      for (const rule of group.rules) {
+        if (lineCount >= maxLines - 3) break;
+        const prefix = rule.type === "dont" ? "- DON'T: " : rule.type === "do" ? "- DO: " : "- ";
+        parts.push(`${prefix}${rule.text}`);
+        lineCount += 1;
+      }
+
+      if (group.rules.length > 0 && group.examples.length > 0) {
+        parts.push("");
+        lineCount += 1;
+      }
+
+      // Best code example for this heading
+      const best = selectBestExample(group.examples);
+      if (best && lineCount + best.lines + 3 < maxLines) {
+        if (best.annotation === "wrong") {
+          parts.push("Wrong:");
+          lineCount += 1;
+        } else if (best.annotation === "right") {
+          parts.push("Right:");
+          lineCount += 1;
+        }
+        parts.push("```ts");
+        parts.push(best.code);
         parts.push("```");
+        parts.push("");
+        lineCount += best.lines + 3;
+
+        // If we showed a "wrong" example, try to show the "right" one too
+        if (best.annotation === "wrong") {
+          const right = group.examples.find(
+            (e) => e.annotation === "right" && e !== best
+          );
+          if (right && lineCount + right.lines + 4 < maxLines) {
+            parts.push("Right:");
+            parts.push("```ts");
+            parts.push(right.code);
+            parts.push("```");
+            parts.push("");
+            lineCount += right.lines + 4;
+          }
+        }
       }
     }
   }
 
   return parts.join("\n");
 }
+
+// --- TSConfig (unchanged) ---
 
 /**
  * Condense TSConfig options from individual option files.
- * Each option becomes 2-3 lines: display name, oneline description, and default.
  */
 export function condenseTsconfigOption(doc: DocFile): string {
   const display = (doc.frontmatter.display as string) || getTitle(doc);
   const oneline = (doc.frontmatter.oneline as string) || "";
-
-  // Extract default value and allowed values from content
   const defaultMatch = doc.rawContent.match(
     /(?:default|Default)[:\s]+`?([^`\n]+)`?/i
   );
@@ -124,14 +229,11 @@ export function condenseTsconfigOption(doc: DocFile): string {
   let line = `- **${display}**`;
   if (oneline) line += `: ${oneline}`;
   if (defaultVal) line += ` Default: \`${defaultVal}\`.`;
-
   return line;
 }
 
-/**
- * Generate the code review checklist reference from doc content.
- * Extracts do's/don'ts, common pitfalls, and best practices.
- */
+// --- Hand-authored generators (unchanged) ---
+
 export function generateReviewContent(docs: DocFile[]): string {
   const parts: string[] = [
     "# TypeScript Code Review Checklist",
@@ -161,53 +263,65 @@ export function generateReviewContent(docs: DocFile[]): string {
     "- Create typed error classes or discriminated error unions",
     "- Use `Result<T, E>` patterns for expected failures instead of exceptions",
     "",
+    "## Common Anti-Patterns",
+    "- Using `Object`, `Function`, `String` (uppercase) instead of `object`, `Function`, `string`",
+    "- Overusing type assertions to silence errors instead of fixing types",
+    "- Not narrowing union types before access",
+    "- Using non-null assertion operator without guarantees",
+    "- Ignoring `strictNullChecks` errors with optional chaining when null is a real concern",
+    "- Using `@ts-ignore` instead of `@ts-expect-error`",
+    "- Barrel files that break tree-shaking",
+    "",
+    "## Module Best Practices",
+    "- Use `nodenext` module resolution for Node.js projects",
+    "- Use `bundler` module resolution for frontend bundler projects",
+    "- Prefer explicit file extensions in imports for ESM",
+    "- Use `type` imports (`import type { X }`) for type-only imports",
+    "- Avoid namespace imports when tree-shaking matters",
   ];
 
-  // Extract Do's and Don'ts from declaration file guide
+  // Extract Do's and Don'ts rules with code examples from source docs
   for (const doc of docs) {
-    if (doc.path.includes("Do's and Don'ts")) {
-      for (const section of doc.sections) {
-        if (
-          section.heading.toLowerCase().includes("don't") ||
-          section.heading.toLowerCase().includes("do ")
-        ) {
-          const cleaned = stripHtml(section.content);
-          const bullets = splitParagraphs(cleaned)
-            .slice(0, 3)
-            .map((p) => `- ${extractFirstSentence(p)}`)
-            .filter((b) => b.length > 3);
-          if (bullets.length > 0) {
-            parts.push(`### ${section.heading}`);
-            parts.push(...bullets);
-            parts.push("");
-          }
-        }
+    if (!doc.path.includes("Do's and Don'ts")) continue;
+
+    const examples = extractCodeExamples(doc);
+    const rules = extractRules(doc);
+
+    if (rules.length === 0) continue;
+
+    parts.push("");
+    parts.push("## Declaration File Rules");
+    parts.push("");
+
+    for (const rule of rules) {
+      const prefix = rule.type === "dont" ? "- DON'T: " : rule.type === "do" ? "- DO: " : "- ";
+      parts.push(`${prefix}${rule.text}`);
+    }
+
+    // Add a few key wrong/right code pairs
+    const wrongExamples = examples.filter((e) => e.annotation === "wrong");
+    const rightExamples = examples.filter((e) => e.annotation === "right");
+
+    for (let i = 0; i < Math.min(wrongExamples.length, 3); i++) {
+      const wrong = wrongExamples[i];
+      const right = rightExamples[i];
+      if (wrong && right && wrong.lines <= 5 && right.lines <= 5) {
+        parts.push("");
+        parts.push("Wrong:");
+        parts.push("```ts");
+        parts.push(wrong.code);
+        parts.push("```");
+        parts.push("Right:");
+        parts.push("```ts");
+        parts.push(right.code);
+        parts.push("```");
       }
     }
   }
 
-  parts.push("## Common Anti-Patterns");
-  parts.push("- Using `Object`, `Function`, `String` (uppercase) instead of `object`, `Function`, `string`");
-  parts.push("- Overusing type assertions to silence errors instead of fixing types");
-  parts.push("- Not narrowing union types before access");
-  parts.push("- Using `!` non-null assertion without guarantees");
-  parts.push("- Ignoring `strictNullChecks` errors with optional chaining when null is a real concern");
-  parts.push("- Using `@ts-ignore` instead of `@ts-expect-error`");
-  parts.push("- Barrel files that break tree-shaking");
-  parts.push("");
-  parts.push("## Module Best Practices");
-  parts.push("- Use `nodenext` module resolution for Node.js projects");
-  parts.push("- Use `bundler` module resolution for frontend bundler projects");
-  parts.push("- Prefer explicit file extensions in imports for ESM");
-  parts.push("- Use `type` imports (`import type { X }`) for type-only imports");
-  parts.push("- Avoid namespace imports when tree-shaking matters");
-
   return parts.join("\n");
 }
 
-/**
- * Generate project template configurations.
- */
 export function generateProjectTemplates(docs: DocFile[]): string {
   return [
     "# TypeScript Project Templates",
@@ -341,37 +455,56 @@ export function generateProjectTemplates(docs: DocFile[]): string {
 
 // --- Internal helpers ---
 
-function removeCodeBlocks(content: string): string {
-  return content.replace(/```[\s\S]*?```/g, "").trim();
+function isTypeScriptBlock(block: CodeBlock): boolean {
+  return block.lang === "ts" || block.lang === "typescript" || block.lang === "tsx";
 }
 
-function splitParagraphs(text: string): string[] {
+function detectAnnotation(
+  block: CodeBlock,
+  sectionContent: string
+): "wrong" | "right" | "info" | undefined {
+  // Check code comments for WRONG/OK/DO NOT markers
+  if (block.content.match(/\/\*\s*WRONG\s*\*\//i) || block.content.match(/DON'T DO THIS/i)) {
+    return "wrong";
+  }
+  if (block.content.match(/\/\*\s*OK\s*\*\//i) || block.content.match(/\/\*\s*RIGHT\s*\*\//i)) {
+    return "right";
+  }
+
+  // Check surrounding text for ❌/✅ markers
+  // Find the position of this code block in the section content
+  const codeInContent = sectionContent.indexOf(block.content.slice(0, 40));
+  if (codeInContent >= 0) {
+    const before = sectionContent.slice(Math.max(0, codeInContent - 200), codeInContent);
+    if (before.includes("❌") || before.match(/\*\*Don't\*\*/)) return "wrong";
+    if (before.includes("✅") || before.match(/\*\*Do\*\*\s/)) return "right";
+  }
+
+  return undefined;
+}
+
+function cleanRuleText(text: string): string {
   return text
-    .split(/\n\n+/)
-    .map((p) => p.trim())
-    .filter((p) => p.length > 0);
+    .replace(/^[-*]\s+/, "")           // Remove list marker
+    .replace(/^[❌✅]\s*/, "")          // Remove emoji
+    .replace(/^\*\*(Don't|Do)\*\*\s*/, "") // Remove bold Do/Don't
+    .replace(/^_?(Don't|Do)_?\s*/, "")     // Remove italic Do/Don't
+    .trim();
 }
 
-function extractFirstSentence(paragraph: string): string {
-  // Normalize whitespace
-  const normalized = paragraph.replace(/\s+/g, " ").trim();
-  const match = normalized.match(/^[^.!?]+[.!?]/);
-  return match ? match[0].trim() : normalized.slice(0, 120);
-}
+function selectBestExample(examples: CodeExample[]): CodeExample | null {
+  if (examples.length === 0) return null;
 
-function selectBestCodeBlock(
-  blocks: CodeBlock[],
-  priorities: ContentPriority[]
-): CodeBlock | null {
-  const tsBlocks = blocks.filter(
-    (b) => b.lang === "ts" || b.lang === "typescript" || b.lang === "tsx"
-  );
-  if (tsBlocks.length === 0) return null;
+  // Prefer "wrong" examples (they pair with "right" ones and show contrast)
+  const wrong = examples.find((e) => e.annotation === "wrong");
+  if (wrong && wrong.lines <= 12) return wrong;
 
-  // Prefer blocks between 2-15 lines (meaningful but concise)
-  const ideal = tsBlocks
-    .filter((b) => b.lines >= 2 && b.lines <= 15)
+  // Then prefer examples in the 3-12 line sweet spot
+  const ideal = examples
+    .filter((e) => e.lines >= 3 && e.lines <= 12)
     .sort((a, b) => a.lines - b.lines);
+  if (ideal.length > 0) return ideal[0];
 
-  return ideal[0] || tsBlocks.sort((a, b) => a.lines - b.lines)[0];
+  // Fall back to shortest
+  return examples.sort((a, b) => a.lines - b.lines)[0];
 }

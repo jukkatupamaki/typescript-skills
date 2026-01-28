@@ -15,6 +15,7 @@ export interface DocFile {
 export interface Section {
   heading: string;
   level: number;
+  parentHeading: string;
   content: string;
   codeBlocks: CodeBlock[];
 }
@@ -30,7 +31,8 @@ export interface CodeBlock {
  * Parse a markdown documentation file into structured sections.
  */
 export function extractDoc(filePath: string, rawMarkdown: string): DocFile {
-  const { data: frontmatter, content } = matter(rawMarkdown);
+  const { data: frontmatter, content: rawContent } = matter(rawMarkdown);
+  const content = rawContent.replace(/\r\n/g, "\n");
   const sections = splitIntoSections(content);
 
   return {
@@ -43,6 +45,8 @@ export function extractDoc(filePath: string, rawMarkdown: string): DocFile {
 
 /**
  * Split markdown content into sections by headings.
+ * Tracks parent headings so that generic sub-headings like "Example"
+ * can be resolved to their parent context (e.g., "Partial<Type>").
  */
 function splitIntoSections(content: string): Section[] {
   const lines = content.split("\n");
@@ -50,16 +54,24 @@ function splitIntoSections(content: string): Section[] {
   let currentHeading = "";
   let currentLevel = 0;
   let currentLines: string[] = [];
+  // Track the most recent heading at each level (1-6)
+  const headingStack: string[] = ["", "", "", "", "", "", ""];
 
   for (const line of lines) {
     const headingMatch = line.match(/^(#{1,6})\s+(.+)$/);
     if (headingMatch) {
       // Save previous section
       if (currentLines.length > 0 || currentHeading) {
-        sections.push(buildSection(currentHeading, currentLevel, currentLines));
+        const parent = findParentHeading(currentLevel, headingStack);
+        sections.push(buildSection(currentHeading, currentLevel, parent, currentLines));
       }
       currentHeading = headingMatch[2];
       currentLevel = headingMatch[1].length;
+      headingStack[currentLevel] = currentHeading;
+      // Clear deeper levels when a higher heading appears
+      for (let i = currentLevel + 1; i < headingStack.length; i++) {
+        headingStack[i] = "";
+      }
       currentLines = [];
     } else {
       currentLines.push(line);
@@ -68,19 +80,31 @@ function splitIntoSections(content: string): Section[] {
 
   // Save last section
   if (currentLines.length > 0 || currentHeading) {
-    sections.push(buildSection(currentHeading, currentLevel, currentLines));
+    const parent = findParentHeading(currentLevel, headingStack);
+    sections.push(buildSection(currentHeading, currentLevel, parent, currentLines));
   }
 
   return sections;
 }
 
-function buildSection(heading: string, level: number, lines: string[]): Section {
+/**
+ * Find the nearest parent heading (the most recent heading at a shallower level).
+ */
+function findParentHeading(level: number, headingStack: string[]): string {
+  for (let i = level - 1; i >= 1; i--) {
+    if (headingStack[i]) return headingStack[i];
+  }
+  return "";
+}
+
+function buildSection(heading: string, level: number, parentHeading: string, lines: string[]): Section {
   const content = lines.join("\n");
   const codeBlocks = extractCodeBlocks(content);
 
   return {
     heading,
     level,
+    parentHeading,
     content,
     codeBlocks,
   };
@@ -134,6 +158,19 @@ export function stripHtml(content: string): string {
     .replace(/<p[^>]*>[\s\S]*?<\/p>/g, "")
     .replace(/<[^>]+>/g, "")
     .replace(/\n{3,}/g, "\n\n");
+}
+
+/**
+ * Strip markdown links, keeping only the link text.
+ * [text](url) → text
+ * Also removes bare relative URLs like (/docs/...).
+ */
+export function stripLinks(content: string): string {
+  return content
+    // [text](url) → text
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, "$1")
+    // Remove bare parenthesized relative URLs left over
+    .replace(/\(\/docs\/[^)]*\)/g, "");
 }
 
 /**

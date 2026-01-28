@@ -1,6 +1,6 @@
 /**
  * Reference file generator.
- * Reads source docs, condenses them, and writes output reference files.
+ * Reads source docs, extracts code examples and rules, and writes output reference files.
  */
 
 import { readFile } from "node:fs/promises";
@@ -9,7 +9,9 @@ import { glob } from "glob";
 import { REF_FILE_SOURCES, type SourceMapping } from "./config.js";
 import { extractDoc, type DocFile } from "./extract.js";
 import {
-  condenseDoc,
+  extractCodeExamples,
+  extractRules,
+  formatRefFile,
   condenseTsconfigOption,
   generateReviewContent,
   generateProjectTemplates,
@@ -89,30 +91,26 @@ async function generateRef(
   };
 }
 
+/**
+ * Generate a standard ref file by extracting code examples and rules from source docs.
+ */
 function generateStandardRef(
   filename: string,
   docs: DocFile[],
   mapping: SourceMapping
 ): string {
-  const title = filename.replace(/\.md$/, "").replace(/-/g, " ");
-  const parts: string[] = [`# ${titleCase(title)}`, ""];
+  const title = titleCase(filename.replace(/\.md$/, "").replace(/-/g, " "));
 
-  // Distribute line budget across docs
-  const perDocBudget = Math.floor(mapping.maxLines / Math.max(docs.length, 1));
+  const docData = docs.map((doc) => ({
+    doc,
+    examples: extractCodeExamples(doc),
+    rules: extractRules(doc),
+  }));
 
-  for (const doc of docs) {
-    const condensed = condenseDoc(doc, perDocBudget, mapping.priorities);
-    if (condensed.trim()) {
-      parts.push(condensed);
-      parts.push("");
-    }
-  }
-
-  return parts.join("\n");
+  return formatRefFile(title, docData, mapping.maxLines);
 }
 
 function generateTsconfigReference(docs: DocFile[]): string {
-  // Group options by category based on content patterns
   const categories: Record<string, string[]> = {
     "Type Checking": [],
     "Modules": [],
@@ -124,7 +122,6 @@ function generateTsconfigReference(docs: DocFile[]): string {
     "Other": [],
   };
 
-  // Known category mappings for common options
   const categoryMap: Record<string, string> = {
     strict: "Type Checking",
     strictNullChecks: "Type Checking",
