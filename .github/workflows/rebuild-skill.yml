@@ -1,0 +1,71 @@
+name: Rebuild TypeScript Skill
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: "TypeScript-Website commit SHA (default: latest main)"
+        required: false
+
+jobs:
+  rebuild:
+    name: Rebuild and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: microsoft/TypeScript-Website
+          path: TypeScript-Website
+          ref: ${{ github.event.inputs.commit || '' }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm ci
+
+      - name: Get source commit info
+        id: source
+        run: |
+          cd TypeScript-Website
+          echo "commit=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
+          echo "short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Build skill
+        run: npx tsx build/src/index.ts --build
+
+      - name: Run structural tests
+        run: npx vitest run test/structural/
+
+      - name: Run evaluation tests
+        if: env.ANTHROPIC_API_KEY != ''
+        run: npx tsx test/eval/runner.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: "Update TypeScript skill from upstream (${{ steps.source.outputs.short }})"
+          branch: update-typescript-skill-${{ steps.source.outputs.short }}
+          commit-message: |
+            chore: rebuild TypeScript skill from docs commit ${{ steps.source.outputs.short }}
+
+            Source: microsoft/TypeScript-Website@${{ steps.source.outputs.commit }}
+          body: |
+            ## Summary
+            - Rebuilt TypeScript skill from upstream docs
+            - Source commit: `${{ steps.source.outputs.commit }}`
+
+            ## Changes
+            Run `npx tsx build/src/index.ts --diff` to see what changed.
+
+            ## Test plan
+            - [ ] Structural tests pass (automated)
+            - [ ] Eval tests pass (automated if API key available)
+            - [ ] Manual smoke test: `/typescript create a generic Result type`
+            - [ ] Manual smoke test: `/typescript review` on a sample file
+            - [ ] Manual smoke test: `/typescript setup node`
+          labels: upstream-update

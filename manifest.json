@@ -1,0 +1,1572 @@
+{
+  "version": "1.0.0",
+  "sourceRepo": "microsoft/TypeScript-Website",
+  "sourceCommit": "4c4a3173e3239704ee5194d20456435934e95785",
+  "buildDate": "2026-01-28T17:50:53.324Z",
+  "sources": {
+    "packages/documentation/copy/en/handbook-v2/Basics.md": {
+      "sha256": "c89617a7d260a61a8841f169e1e3c15af3cda5726f3b47218563e9b8870114f1",
+      "feedsInto": [
+        "type-system-core.md",
+        "code-review-checklist.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Everyday Types.md": {
+      "sha256": "136cf62bcd5bc9a19f98fe385fb932185209c36d487972cde69de2f480d8d52d",
+      "feedsInto": [
+        "type-system-core.md",
+        "code-review-checklist.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Narrowing.md": {
+      "sha256": "34666e6eecb2746dd5de1eb5cefc03236512971b53c2eff2c9c854601749177c",
+      "feedsInto": [
+        "type-system-core.md",
+        "code-review-checklist.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Object Types.md": {
+      "sha256": "2eea0f3453af5dc3f30c01f4a5a84911fb2b993bbeb674a53e834f4d2a8e679a",
+      "feedsInto": [
+        "type-system-core.md"
+      ]
+    },
+    "packages/documentation/copy/en/reference/Type Compatibility.md": {
+      "sha256": "b5c05639f55ea988355ab2a136f9d592b68c627cf3b63395761fb457d47ff8ea",
+      "feedsInto": [
+        "type-system-core.md"
+      ]
+    },
+    "packages/documentation/copy/en/reference/Type Inference.md": {
+      "sha256": "5fa082951780a106c8c223dafe8a235754d7b81e3576dc413a11306096ffeaf3",
+      "feedsInto": [
+        "type-system-core.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/More on Functions.md": {
+      "sha256": "9c3a434461a367add9a537de678f1727bbb8a82536bd3ece35c06ca0be61f0eb",
+      "feedsInto": [
+        "functions-and-classes.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Classes.md": {
+      "sha256": "91569db6801e95d223ccd0dada8fb96f4e5af1b5f0539bab46a28649b0cd8bcc",
+      "feedsInto": [
+        "functions-and-classes.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Type Manipulation/Generics.md": {
+      "sha256": "03ba6d7620fe02cfd7610507e895bc6ef5e20357d3a3ff4f9d7ad195d5381412",
+      "feedsInto": [
+        "functions-and-classes.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Type Manipulation/_Creating Types from Types.md": {
+      "sha256": "68b5c4c6435b62a24d279cc35cfe71a758e6cca3ae9cfab516c47f5b52e9b79e",
+      "feedsInto": [
+        "type-manipulation.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Type Manipulation/Conditional Types.md": {
+      "sha256": "0bed922040a97f25ae1522782d068e253cd1ca51efe450ac08ecb5e7abf73725",
+      "feedsInto": [
+        "type-manipulation.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Type Manipulation/Mapped Types.md": {
+      "sha256": "0740a3b3f4807303aeb4d91d6ad88f503219f4402ffeb28cc3f7752615bc8edd",
+      "feedsInto": [
+        "type-manipulation.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Type Manipulation/Template Literal Types.md": {
+      "sha256": "3e57fb44e3e17d92312e972014648ac385fdcb972dce84dbbf091bf3b16a1420",
+      "feedsInto": [
+        "type-manipulation.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Type Manipulation/Indexed Access Types.md": {
+      "sha256": "a88840be0146e887c5f4834f4bd6b8db5060c0a65f5d66e388e6e4a00e289c01",
+      "feedsInto": [
+        "type-manipulation.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Type Manipulation/Keyof Type Operator.md": {
+      "sha256": "ced1ce061ded920d46fd5fbe2850c83676b705db045afefaefe168e2b419ce12",
+      "feedsInto": [
+        "type-manipulation.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Type Manipulation/Typeof Type Operator.md": {
+      "sha256": "deadbbba6a77704aa9e0f7f70c87acf8991bc6a0796ccfe5d2884e7cf284dc1d",
+      "feedsInto": [
+        "type-manipulation.md"
+      ]
+    },
+    "packages/documentation/copy/en/reference/Utility Types.md": {
+      "sha256": "529839a98d3d33818cfdda6d39b244f75da26fc438a466f804543d43ffafeb32",
+      "feedsInto": [
+        "utility-types.md",
+        "code-review-checklist.md"
+      ]
+    },
+    "packages/documentation/copy/en/handbook-v2/Modules.md": {
+      "sha256": "69f10eff7f4f8a4fb548866b587771f7ed3a49e5c773c2f716b45297601f4181",
+      "feedsInto": [
+        "modules-and-namespaces.md"
+      ]
+    },
+    "packages/documentation/copy/en/modules-reference/Introduction.md": {
+      "sha256": "933adce7a0aeea0f864e475d6bb05034ecdafc2f7a58eb70235e99674bdee070",
+      "feedsInto": [
+        "modules-and-namespaces.md"
+      ]
+    },
+    "packages/documentation/copy/en/modules-reference/Theory.md": {
+      "sha256": "57e70ae0dfd86e093fea3e4f49f5a0d9926981308a3d9d1e99c9b4a5a64cf653",
+      "feedsInto": [
+        "modules-and-namespaces.md"
+      ]
+    },
+    "packages/documentation/copy/en/modules-reference/Reference.md": {
+      "sha256": "80df95332d7c602cf72d78ee7ecf768d17a00d1b019e768b816224f2ef1ce084",
+      "feedsInto": [
+        "modules-and-namespaces.md"
+      ]
+    },
+    "packages/documentation/copy/en/reference/Namespaces.md": {
+      "sha256": "25bc4271633f883ef48b55cdba69bf18e600a5afcd3e31f5f6ea29632c683fb5",
+      "feedsInto": [
+        "modules-and-namespaces.md"
+      ]
+    },
+    "packages/documentation/copy/en/reference/Namespaces and Modules.md": {
+      "sha256": "e3d5054ae972a4e39393629a002b42b866b32ac3be7ecad239c3de3971d8a2d5",
+      "feedsInto": [
+        "modules-and-namespaces.md"
+      ]
+    },
+    "packages/documentation/copy/en/project-config/tsconfig.json.md": {
+      "sha256": "8273a16152a271910673611168d9792ec923a01fa6aac7ac0b862d49912a5361",
+      "feedsInto": [
+        "tsconfig-guide.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/documentation/copy/en/project-config/Compiler Options.md": {
+      "sha256": "fcb6f999ed5d870861eeb779a5f767ed5e7b31e7a243c4ba1ca0c56de62e89fa",
+      "feedsInto": [
+        "tsconfig-guide.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/documentation/copy/en/project-config/Project References.md": {
+      "sha256": "c95e99dbd24d3003358de3591c211bb7201b0e250f4f2af69495bd05354f6097",
+      "feedsInto": [
+        "tsconfig-guide.md"
+      ]
+    },
+    "packages/documentation/copy/en/project-config/Configuring Watch.md": {
+      "sha256": "7a3506d20489ba942c6fda42012686b34aa98ba1e8f8530b4f456bd507c660b2",
+      "feedsInto": [
+        "tsconfig-guide.md"
+      ]
+    },
+    "packages/documentation/copy/en/project-config/Integrating with Build Tools.md": {
+      "sha256": "d90702f1823a072c89bd20de949ba92c49edf1283af9a1a51f70c74896324fe3",
+      "feedsInto": [
+        "tsconfig-guide.md"
+      ]
+    },
+    "packages/documentation/copy/en/modules-reference/guides/Choosing Compiler Options.md": {
+      "sha256": "ed24806568e594fa8a01c22f92d57b2ba8bc7dbf2f6b4afc59de7b50b5bb5175",
+      "feedsInto": [
+        "tsconfig-guide.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/allowArbitraryExtensions.md": {
+      "sha256": "b4549f850327964411de9b1d12cd98fdd7d8c6050bf7edce7a2dba9ac50a3d08",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/allowImportingTsExtensions.md": {
+      "sha256": "37f02e1adf4b29385d6598a2b5693da3f00f516f246dbbbf458ce2cc13df0aa9",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/allowJs.md": {
+      "sha256": "50128a176a4eeec8c7857c8726cc6426e444f5f9bfde6eb3e261c84c2d70861d",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/allowSyntheticDefaultImports.md": {
+      "sha256": "9e5a6f6f8f664afcef4a17ecb13fdd4dbf8d787913064f59296674f91f34f7b8",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/allowUmdGlobalAccess.md": {
+      "sha256": "f2cd6f6a4de7dc8850d772b8c779587839ea4119ad20856c9cd6c6a74e171565",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/allowUnreachableCode.md": {
+      "sha256": "a71e890fde36804705b2630d1e763c8ccdb55a8874920fb894f94f37aaa57954",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/allowUnusedLabels.md": {
+      "sha256": "36fd8cdd5e4fc5ab477899eb8d9b2e17c096eff29439057fddac0f259ac70d1f",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/alwaysStrict.md": {
+      "sha256": "e31c06839c639822a2e2f88e3f7f35ec59afb00c1d491b0793e44ae9d23ac8ac",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/assumeChangesOnlyAffectDirectDependencies.md": {
+      "sha256": "fd75fbd4fc16dfe8e49c321731dc0c69df7e23c7df2f6f3327d5cb10090fedca",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/baseUrl.md": {
+      "sha256": "d80f97ea86d18b52822942190683bb37c8e1c20363ef70c4e6a85c74808f2fd7",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/charset.md": {
+      "sha256": "1af791cc0ed3ece2c84fcf1baf21be70bef259b4672d95c80cf82d96a3e730ac",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/checkJs.md": {
+      "sha256": "352c83bfe3082de1a80c1964e00bd3ee0d455ad72bf56f9e8f209ddcc724cbd2",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/clean.md": {
+      "sha256": "bc9340e400fbfabda2349a13f2099851e727c3609e867e0e72d3679e77b31cc9",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/composite.md": {
+      "sha256": "f0399e88c03b5746fb8adacc2951c7b13f0c412a5cadd939dcc67ca4c880ae8c",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/customConditions.md": {
+      "sha256": "2e9ea0f62ec31aefea20c35e1a5e660127b3079312f6f5cf8a6ac2d4c6dced39",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/declaration.md": {
+      "sha256": "5031edb90e6523ec9895d2214235599d1368d121295ff0900633d59414bc8da8",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/declarationDir.md": {
+      "sha256": "1eb7a39a134a91f39af4c4a37908bd5623a572134d9c83b1a732834ba23ba45d",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/declarationMap.md": {
+      "sha256": "e3ecb31c705c10805afcf502f1711ed0e26bbaf6ec622c2bfc22ac94b1cc098f",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/diagnostics.md": {
+      "sha256": "223ce62bcfc72fb2fd38208f2ea0d2275a9cc39ab4e5996bfddf11dbfb660cf4",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/disableFilenameBasedTypeAcquisition.md": {
+      "sha256": "bd1183975bad39c2bfe99e33cc8a18f96e648350da446f49afebf19e17ab2c80",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/disableReferencedProjectLoad.md": {
+      "sha256": "af6fb5f0710464e1af65a609955d9bc32afbbfdc0127e4a15b25e08064f2e7d2",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/disableSizeLimit.md": {
+      "sha256": "9e81808f0cba42ddaf808c41246e39645cd616a3272e08317dc7fe073296cbc7",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/disableSolutionSearching.md": {
+      "sha256": "0c4f9021403388ff655a57a5a5a466b1e34162906b431c83ea452fb8a4e5de5e",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/disableSourceOfProjectReferenceRedirect.md": {
+      "sha256": "2e8da462fbcfd9addf95dfd0a59010541e601d7f752143a81480384363be0700",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/downlevelIteration.md": {
+      "sha256": "c397872ed3b83eb0b23d32e3a1c3ccc9f6883e28eecb4adfaac9e38d23f1006d",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/emitBOM.md": {
+      "sha256": "9a1e25d9d4dfe225a162e5e115876b05b321523a60a5727e2419fc9fba834371",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/emitDeclarationOnly.md": {
+      "sha256": "bfafba152aa8b9e43694315edc79fbfcf2002469dda5abc3514dbb963597a729",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/emitDecoratorMetadata.md": {
+      "sha256": "551ebb3ffc9d38fb8d698db4da1a6592a767177ade4c7503f0f3f23b698b4615",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/enable.md": {
+      "sha256": "49cc47242e8ffa70602183f2a6bc29831b4b59b2fe291f188599a30c7407e4f5",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/erasableSyntaxOnly.md": {
+      "sha256": "5049d493e5c8c789715405eb16a199424c3e31d7b42e4a0f10ad12d9f435d691",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/esModuleInterop.md": {
+      "sha256": "f0c85f2503a08de983be16f3ac63f40036f351ec57f504769589139feb307621",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/exactOptionalPropertyTypes.md": {
+      "sha256": "b875bd457254db8eaee9dbe3c33bcfdc7755edbedb252bce4469e667ac7720f7",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/exclude.md": {
+      "sha256": "07e6efff76d4906f7c95a374c151bdd21755d9d12ee2cb6d635b73bf301d3897",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/excludeDirectories.md": {
+      "sha256": "0651207b2f6725b92ce4fbca2500434d3c5f8d02529f60bc34435a7aa4aff5a7",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/excludeFiles.md": {
+      "sha256": "7323e6f3941e325f211492244248e8cc81e823b022f2140229235506c5f336ab",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/experimentalDecorators.md": {
+      "sha256": "af7c84cc1aea34801554103b8821fa4bb48de93f795e1e29b74d74e5e15cebca",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/explainFiles.md": {
+      "sha256": "8cf16d58f953ca64b432222e909ea36100ba75cc82286e215b73a448ea22b418",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/extendedDiagnostics.md": {
+      "sha256": "855fead3040e600d118f3c714ca4e57f8fee56c4fb22fafda33a50268ea3b4ab",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/extends.md": {
+      "sha256": "2ae99c5f78bc2b734f41cc961f8b6865f270c94c19e523af7e2ee72f563f64f6",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/fallbackPolling.md": {
+      "sha256": "dfc0c6b1b83fece2b15bfd44915d1225eaa32afb570200850959937ed64f0acb",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/files.md": {
+      "sha256": "f1ce96d127e15c519702f47214112cdfd3eb793f035f963881341273f5009658",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/force.md": {
+      "sha256": "d0d263ca8b8631ac4ae663d3f66c4a03bb60a47b4b607fc2f0588ac8a09fced3",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/forceConsistentCasingInFileNames.md": {
+      "sha256": "f97fdbd342ae2f59840e82dfaad7613ffe8149c5bafa683e5cffab1d49a1375f",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/generateCpuProfile.md": {
+      "sha256": "595fc0151d676d488b430d7f65b5292e174fc4f8f80d4ae8e87295aa5beb3c6b",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/generateTrace.md": {
+      "sha256": "d32ed4daabeec578b91aec1efcd436f2000a6f9686b7526e21ff21357408356e",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/importHelpers.md": {
+      "sha256": "a565581ff9e20d272b1bb427b84352935e398072796344c596d4f7f60aaa366a",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/importsNotUsedAsValues.md": {
+      "sha256": "e21ba9fbae50137e9729eac58ab2d7ec4ca1f2f21c37853156a0bbbd59053faf",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/include.md": {
+      "sha256": "cf052f7998ac6b59a126062bd119bbe42c68f58a3d3e168ee9d7ecc8f14eb03d",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/incremental.md": {
+      "sha256": "0dcc2af7f68af7932c59b69eaef0edc125fb2e357727d7b172bc0ff5d7807bae",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/inlineSourceMap.md": {
+      "sha256": "289f77f1e95fcd17fc6b85631dfa048f71d9a91df11ed8d2971795d34796fe59",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/inlineSources.md": {
+      "sha256": "4de1dd29ff6acdf431d4bbfa30e9c24675987116864528ee181b2aac02869f4d",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/isolatedDeclarations.md": {
+      "sha256": "3acf751058166629b68b23b8e5c8b35ab31cdd9b7863789e104540111728a58b",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/isolatedModules.md": {
+      "sha256": "ffd09b0ce8e70d4bf708c2e8e87eac363587ca4df7b8c825985e733274d47505",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/jsx.md": {
+      "sha256": "726c8a416311887cb7c2c0c899b444b9ed34ad995377eb123a051ee9271eeddb",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/jsxFactory.md": {
+      "sha256": "8c2b82e4fbaf44fd8ebb6a0cc17c1b303b1b1d7a35b45cc2e0e52367c73e20db",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/jsxFragmentFactory.md": {
+      "sha256": "ef4b8ff5113737d310d43d794422677164950097e3dd1301d9c6c5ecba4c5656",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/jsxImportSource.md": {
+      "sha256": "c70a0274b0f74bfa5d6cb63be1582bd6d641c0355a2eb5688c64c9cb24a62134",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/keyofStringsOnly.md": {
+      "sha256": "ecb6837655fe31fd4c0850ae250f9e80840bf2d64a9ad9a981b960ec15093cab",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/lib.md": {
+      "sha256": "ede385f0b8853f73e047e720b8190ae60d1829a8ec3e88a364baaaf05542b4bd",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/libReplacement.md": {
+      "sha256": "dbcbc6a5d074dae84119ebddc77a2130ffac6a8e6cf05744295a994f956fd0d7",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/listEmittedFiles.md": {
+      "sha256": "82398c188428f78953c41ae90a7725eb87a1eed54c45607f2d29880f013e76e7",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/listFiles.md": {
+      "sha256": "45e7c68451187bb83782da52f8e6bd768a6d7f3750815d3283a452e846aaa9eb",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/locale.md": {
+      "sha256": "9e3f21b29fd67c7117b12df315868491ae39b738e9719c7b44a4f7377a9b5aed",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/mapRoot.md": {
+      "sha256": "04b65d494d3cde52b6408500a764d0a0f014a7c57ba49f4673d21962cc34e7d6",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/maxNodeModuleJsDepth.md": {
+      "sha256": "7d1bd37b5a93f3711cb1d49c3d277ead35b1400b7227e5109793fd2663e8374e",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/module.md": {
+      "sha256": "ca13417c05e97fba0b2430d119235dd59cfd82d870c3cf0dbfeae4a19d65ef92",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/moduleDetection.md": {
+      "sha256": "977c347561729bf0da20f6981f2fdb53b0c09134296a822b28e95319daed332b",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/moduleResolution.md": {
+      "sha256": "2c94958b4465fad428d5c00cc469d644beadbf3794745b0ef875f0a76753349e",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/moduleSuffixes.md": {
+      "sha256": "88adabad717da89e94036295f67d4aceb10fb0189bbc75cf7aed1a208ff7a16d",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/newLine.md": {
+      "sha256": "2fa69f53279df175b7c7481372c0cfe2445ce1c0304ac9e77ff6a00b80e60b34",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noCheck.md": {
+      "sha256": "54a7d5e8b9fe7a7d9cd4eb7d14c21a8d403a7c76a54f01eae1084bc58b77b236",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noEmit.md": {
+      "sha256": "4fb501c52cf0a839b2835b48b1e241a01f2f57e3c482c1233d15559816cdf0ba",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noEmitHelpers.md": {
+      "sha256": "d6181c58e5f8dbfa6410b80f23f1e5cd7970a809721e47152499f6ec9ec75a02",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noEmitOnError.md": {
+      "sha256": "98c095d5967596a4f82c2124c9b45aa8241c586547252ad8c87808607f8ea889",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noErrorTruncation.md": {
+      "sha256": "95fbdff6160a5306d3c3c2ee21240cb5a950c508f340179ddf4db912c679858f",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noFallthroughCasesInSwitch.md": {
+      "sha256": "4e5b31666042a2797b2f1c705788c333b72c89d722f8af478b578b941d596630",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noImplicitAny.md": {
+      "sha256": "053f97a38022dff8ea63c74a218ce9acd61909e93ae3f36ca563bb7fbe68577b",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noImplicitOverride.md": {
+      "sha256": "9cdb09099246550b5021a9970c945f29f258df33658d3f1f8e3504ca10aa7a32",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noImplicitReturns.md": {
+      "sha256": "86f6b06f55506c216936600eb01ba38b04e9652da102c1364872882dca4acfc1",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noImplicitThis.md": {
+      "sha256": "e36636b8bb4833ba9fa0be003fa0fd1f731c0508921e4018e020326422ad6d3b",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noImplicitUseStrict.md": {
+      "sha256": "638bf9ceef0df8efe1a0a5c2d9abbe01f82656b22ad1bde18e8f42db12da5825",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noLib.md": {
+      "sha256": "d9226fea1831980c1bb126f4829d9d462ee03106a6cf32155b684b4f8750b1a3",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noPropertyAccessFromIndexSignature.md": {
+      "sha256": "919fe07eea1151c77f3a6ad3ba0eda240ae76351c24a4085c15d23d7d55959d8",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noResolve.md": {
+      "sha256": "c55fc3fb059eb6acbce721340b1488adab02c5b1fbb3f999a22d5f8384a1a498",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noStrictGenericChecks.md": {
+      "sha256": "5dad27a16cf2df6caa5c496a5ec9e6b2ae94b601ab77d7c0eadba669fba73c2b",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noUncheckedIndexedAccess.md": {
+      "sha256": "8a5008e63611625971396cceb470798c7148eb45bdbbadbe226ec7464dedecda",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noUncheckedSideEffectImports.md": {
+      "sha256": "1745b7e623159e6ea2ae37d612d4656339ce9b52be4933b2f6454508a1165b56",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noUnusedLocals.md": {
+      "sha256": "8c3aaa9360df44f675bf46c333ab46e167823e9715454554eb5fe348c0cfb7c3",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/noUnusedParameters.md": {
+      "sha256": "fd24d360637cd7b59a91b9f751671fb608107af1c796cd2497bcb31342a2f516",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/out.md": {
+      "sha256": "3413c7685671c476ca45fc7168b52737cf99447614075b4ac78734eead8f482a",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/outDir.md": {
+      "sha256": "463e1ad06a689aa4b3c33129db65d8491a95edcc4b91e97c2f1fa43ec13a965a",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/outFile.md": {
+      "sha256": "7270f499ca1ffd9a679bbbef530a407f33dba9f05a2aa4daa558fc25a8e4704d",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/paths.md": {
+      "sha256": "15973b33a0a108c879622bfcbcdd0e470264f6c5961c2ab0e73ce68035e4ed5c",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/plugins.md": {
+      "sha256": "7b5068c0b091eccfec812838a435bc43313bccf70d0ee229af6812d749d0022b",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/preserveConstEnums.md": {
+      "sha256": "b454030e5f06706901ab53cfe0365b7aba70b770de45dd87081a37530aa3f0f2",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/preserveSymlinks.md": {
+      "sha256": "d0318c73d292f68a04b3adeedbdc6314b0fb0ad8729b88dd17cf7655ead6b2b1",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/preserveValueImports.md": {
+      "sha256": "aec8c88a6493812766be1553d296af1534afdf961f344d69a19ed473a22a3699",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/preserveWatchOutput.md": {
+      "sha256": "637814f2deee65187577f9c62b2d0c056c37a4213b4489d1a6e961e3c7b57831",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/pretty.md": {
+      "sha256": "9585e65955b8e3754f609bcf6103cb16f982a545cc19c37691f2fe422df9108c",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/reactNamespace.md": {
+      "sha256": "a8c488198be1030eb2e7ae00033df657672676281fd34e1b87da1f95eb5dbbcf",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/references.md": {
+      "sha256": "d3ae911f4af4d2b2e2aba7a594c442660700377879e50495852af9df7c022adc",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/removeComments.md": {
+      "sha256": "11971beef5d47242d3117bf4d644f50d9bffff163b44822d5706811d6354ff5c",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/resolveJsonModule.md": {
+      "sha256": "752ddb728db53aa213e0581b252017e640cc7133920fea6d7d96ec0e5056754e",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/resolvePackageJsonExports.md": {
+      "sha256": "778ada611748b747fd27bb48e5057b29996fcee47d42c4bd39593daffc8e6ff5",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/resolvePackageJsonImports.md": {
+      "sha256": "cd29980ebac68c3a64f64f6de2ab9e1b8719f4932b1c88fef5808e4c5dddbab6",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/rewriteRelativeImportExtensions.md": {
+      "sha256": "6a6437c1e94fc4ce8cc944bfd8f71cfa18de610b21f03bcb8f955e9afec6797a",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/rootDir.md": {
+      "sha256": "70067248ec2ecdc415d53fc74cef44c90d222c1ededd8b8f4f073b7d2bc334ed",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/rootDirs.md": {
+      "sha256": "6953b255d6d554e883099b603ae8d7e4d1c22abd0dc2025f301c708edcb60765",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/skipDefaultLibCheck.md": {
+      "sha256": "9772a942c6ab0e9db89767cca554fa09a82a87636d6f2a1f94b5b887db2f36c8",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/skipLibCheck.md": {
+      "sha256": "72ca2844dca06a2fd61b4801006b9cf65f60ebab32ea77e9479bec627baeb09e",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/sourceMap.md": {
+      "sha256": "cb6259bbbd12912a92161c8e8cb214ca390fba34d9c02c873c7a84dad08bbc49",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/sourceRoot.md": {
+      "sha256": "7484df32394047f7081e6ac77da825be523bcd058796e68e2699437b3dee0773",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/stopBuildOnErrors.md": {
+      "sha256": "a25de29fc94b7f540a6b0e42d105df176cc0a0447a7cd2e0a9d43829b2c6ad50",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/strict.md": {
+      "sha256": "54a65294ba7dbd6afdde66ed0c493803815bf9111073ef17844243fc7de6f51e",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/strictBindCallApply.md": {
+      "sha256": "0db87a1ef6be48c711e84bc82f04744d064c96affe8513b437754344aa053c03",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/strictBuiltinIteratorReturn.md": {
+      "sha256": "8812d66b9baeeb1087989785baee6db1b5d59a3af8e5011ba67b7d05f1cb05a0",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/strictFunctionTypes.md": {
+      "sha256": "09f84fafa51efe71be82c2a3617c6adef2e56374213b900641c0d14508772ef5",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/strictNullChecks.md": {
+      "sha256": "dcf5bed7980df980c571cbfe8c38f3fdeb1f92c153d7ea13b03288e95b83140a",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/strictPropertyInitialization.md": {
+      "sha256": "118ac21273c2fc4ba66d1cb7cb826f28fd831f40ebf326da8449996e29bc648c",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/stripInternal.md": {
+      "sha256": "7470e7628ad4b196c142c6a0936f54e2c65bdad4bd5896b874716b08cb712964",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/suppressExcessPropertyErrors.md": {
+      "sha256": "0effa5ade470f196d5ce45ec2294d1837411643dd4536f0c8ff226c8bc3ba9f5",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/suppressImplicitAnyIndexErrors.md": {
+      "sha256": "d31db0f33f06e3ae2639e4576747e9e85c73b832957244c1b6fac26a0c86ab55",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/synchronousWatchDirectory.md": {
+      "sha256": "10ca04fac1742b03e528f863b85d513107b2b139abf1c85f2efb98626fbf9003",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/target.md": {
+      "sha256": "606226cc2fba723553f14b37717abed36a02fbfca68ab2f36902854baa264d89",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/traceResolution.md": {
+      "sha256": "675ebd3c10357fba88fa6ad0df8b11fa5c396a5e2ea64fe8f7ca5c73e68f70cb",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/tsBuildInfoFile.md": {
+      "sha256": "6098eaaa35563af7df32a293319622c0d8f1d259207d4f19ce6935b808055fba",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/typeAcquisition.md": {
+      "sha256": "2acebda8dccc4c734b7c11c96eed1c50c78dbade269eb2a332e1407c4f722f4d",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/typeRoots.md": {
+      "sha256": "9a75629e187a790fe9695aeef75c5c65ab8d41f0d2dbef818bf33316ecc2a5a2",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/types.md": {
+      "sha256": "f7dabf75fd4dcb36d5c46d1f30e2cd5c958f88552275ec90ac2b4a657f764d88",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/useDefineForClassFields.md": {
+      "sha256": "ee830d18ccb0475ad6b290ed27837e50009e0b0a6611002e6e498c50ba787037",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/useUnknownInCatchVariables.md": {
+      "sha256": "5cbfd1ac68a84d9e47858792251b47b9bc7442ef6f264546f88a821719c6d9c2",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/verbatimModuleSyntax.md": {
+      "sha256": "c51d68b610d796abb4d5a8a6f572c25be5b623359886a97e8bcb466a9d0a9633",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/verbose.md": {
+      "sha256": "d5c27dc3de825576c8daf115486126d309916cbe04ab5466ed6bf7bfef088e61",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/watchDirectory.md": {
+      "sha256": "6d228c13e7d7942661afe0d8c8f46b8cdd170da1c31ca784539994b1c5cb73ad",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/tsconfig-reference/copy/en/options/watchFile.md": {
+      "sha256": "a02bb7fa64bc6b174c578d38c085bab3b688cafdb6c31186c1f9bf21aa6e05ab",
+      "feedsInto": [
+        "tsconfig-options-reference.md",
+        "project-templates.md"
+      ]
+    },
+    "packages/documentation/copy/en/declaration-files/Introduction.md": {
+      "sha256": "8cab0bf55454c19020f99e3b9a3ac3e562e5b9db63330c11713aa5507704905f",
+      "feedsInto": [
+        "declaration-files.md"
+      ]
+    },
+    "packages/documentation/copy/en/declaration-files/By Example.md": {
+      "sha256": "28a47f8c960a80de8d26e402f57ce45c0758507e614662e891df15c28fda6c63",
+      "feedsInto": [
+        "declaration-files.md"
+      ]
+    },
+    "packages/documentation/copy/en/declaration-files/Do's and Don'ts.md": {
+      "sha256": "281897b066370a55b3f41ccfa6adee2057fda6cd42b819db211f5a35263972ff",
+      "feedsInto": [
+        "declaration-files.md",
+        "code-review-checklist.md"
+      ]
+    },
+    "packages/documentation/copy/en/declaration-files/Deep Dive.md": {
+      "sha256": "097cb62419f635fe9caff5b1fb8d6502ae6bba08a0672387e0f2f4efccc44ea4",
+      "feedsInto": [
+        "declaration-files.md"
+      ]
+    },
+    "packages/documentation/copy/en/declaration-files/Library Structures.md": {
+      "sha256": "fe1f3164915f3fe897d6f160db8f05f37f42ae320c3c3331bfb931f0afe645ce",
+      "feedsInto": [
+        "declaration-files.md"
+      ]
+    },
+    "packages/documentation/copy/en/declaration-files/Publishing.md": {
+      "sha256": "61268cc0633e20099fea6e84a75a0976b1516cbacc1c725df82edbd1c7aa1a67",
+      "feedsInto": [
+        "declaration-files.md"
+      ]
+    },
+    "packages/documentation/copy/en/declaration-files/Consumption.md": {
+      "sha256": "055fe41ca122ef25ed0b0e982748ce5cc588bcd2d79bbf8d5d5f44ea6c39ede5",
+      "feedsInto": [
+        "declaration-files.md"
+      ]
+    },
+    "packages/documentation/copy/en/reference/Enums.md": {
+      "sha256": "d386ca0536fc467af334f28d21eaf6793bc7e4b7b437173c18c8b137f67bd1d4",
+      "feedsInto": [
+        "code-review-checklist.md"
+      ]
+    },
+    "packages/documentation/copy/en/reference/Decorators.md": {
+      "sha256": "785f7bc3aacd7cf7ad352e649dd7c2e3823a63fdbc297e9ea935b03b75c58d0b",
+      "feedsInto": [
+        "code-review-checklist.md"
+      ]
+    }
+  },
+  "outputs": {
+    "SKILL.md": {
+      "sha256": "421db096f45baee90d26c0248bf1176d48f1ab5c16890b66de7137d01c746c4c",
+      "lines": 128,
+      "generatedFrom": [
+        "template"
+      ]
+    },
+    "refs/utility-types.md": {
+      "sha256": "397c754e13a4c53237b59b727836a10ec357318dc4cefc824b5334cccb11caa9",
+      "lines": 117,
+      "generatedFrom": [
+        "packages/documentation/copy/en/reference/Utility Types.md"
+      ]
+    },
+    "refs/type-system-core.md": {
+      "sha256": "8cb77756045bb7c629bae37a7586d1320ef1fe2ab6f4344f19335ed749f64f1e",
+      "lines": 287,
+      "generatedFrom": [
+        "packages/documentation/copy/en/handbook-v2/Basics.md",
+        "packages/documentation/copy/en/handbook-v2/Everyday Types.md",
+        "packages/documentation/copy/en/handbook-v2/Narrowing.md",
+        "packages/documentation/copy/en/handbook-v2/Object Types.md",
+        "packages/documentation/copy/en/reference/Type Compatibility.md",
+        "packages/documentation/copy/en/reference/Type Inference.md"
+      ]
+    },
+    "refs/type-manipulation.md": {
+      "sha256": "0ef0f77682b3121cfddc5b0b4d639e1126d167c2166d6fae984af7bb5ec17a15",
+      "lines": 198,
+      "generatedFrom": [
+        "packages/documentation/copy/en/handbook-v2/Type Manipulation/_Creating Types from Types.md",
+        "packages/documentation/copy/en/handbook-v2/Type Manipulation/Conditional Types.md",
+        "packages/documentation/copy/en/handbook-v2/Type Manipulation/Mapped Types.md",
+        "packages/documentation/copy/en/handbook-v2/Type Manipulation/Template Literal Types.md",
+        "packages/documentation/copy/en/handbook-v2/Type Manipulation/Indexed Access Types.md",
+        "packages/documentation/copy/en/handbook-v2/Type Manipulation/Keyof Type Operator.md",
+        "packages/documentation/copy/en/handbook-v2/Type Manipulation/Typeof Type Operator.md"
+      ]
+    },
+    "refs/tsconfig-options-reference.md": {
+      "sha256": "1682b77da5e1bdbda1f8639b8e072adde0afda0c627579ff15c5f0229cf55294",
+      "lines": 161,
+      "generatedFrom": [
+        "packages/tsconfig-reference/copy/en/options/allowArbitraryExtensions.md",
+        "packages/tsconfig-reference/copy/en/options/allowImportingTsExtensions.md",
+        "packages/tsconfig-reference/copy/en/options/allowJs.md",
+        "packages/tsconfig-reference/copy/en/options/allowSyntheticDefaultImports.md",
+        "packages/tsconfig-reference/copy/en/options/allowUmdGlobalAccess.md",
+        "packages/tsconfig-reference/copy/en/options/allowUnreachableCode.md",
+        "packages/tsconfig-reference/copy/en/options/allowUnusedLabels.md",
+        "packages/tsconfig-reference/copy/en/options/alwaysStrict.md",
+        "packages/tsconfig-reference/copy/en/options/assumeChangesOnlyAffectDirectDependencies.md",
+        "packages/tsconfig-reference/copy/en/options/baseUrl.md",
+        "packages/tsconfig-reference/copy/en/options/charset.md",
+        "packages/tsconfig-reference/copy/en/options/checkJs.md",
+        "packages/tsconfig-reference/copy/en/options/clean.md",
+        "packages/tsconfig-reference/copy/en/options/composite.md",
+        "packages/tsconfig-reference/copy/en/options/customConditions.md",
+        "packages/tsconfig-reference/copy/en/options/declaration.md",
+        "packages/tsconfig-reference/copy/en/options/declarationDir.md",
+        "packages/tsconfig-reference/copy/en/options/declarationMap.md",
+        "packages/tsconfig-reference/copy/en/options/diagnostics.md",
+        "packages/tsconfig-reference/copy/en/options/disableFilenameBasedTypeAcquisition.md",
+        "packages/tsconfig-reference/copy/en/options/disableReferencedProjectLoad.md",
+        "packages/tsconfig-reference/copy/en/options/disableSizeLimit.md",
+        "packages/tsconfig-reference/copy/en/options/disableSolutionSearching.md",
+        "packages/tsconfig-reference/copy/en/options/disableSourceOfProjectReferenceRedirect.md",
+        "packages/tsconfig-reference/copy/en/options/downlevelIteration.md",
+        "packages/tsconfig-reference/copy/en/options/emitBOM.md",
+        "packages/tsconfig-reference/copy/en/options/emitDeclarationOnly.md",
+        "packages/tsconfig-reference/copy/en/options/emitDecoratorMetadata.md",
+        "packages/tsconfig-reference/copy/en/options/enable.md",
+        "packages/tsconfig-reference/copy/en/options/erasableSyntaxOnly.md",
+        "packages/tsconfig-reference/copy/en/options/esModuleInterop.md",
+        "packages/tsconfig-reference/copy/en/options/exactOptionalPropertyTypes.md",
+        "packages/tsconfig-reference/copy/en/options/exclude.md",
+        "packages/tsconfig-reference/copy/en/options/excludeDirectories.md",
+        "packages/tsconfig-reference/copy/en/options/excludeFiles.md",
+        "packages/tsconfig-reference/copy/en/options/experimentalDecorators.md",
+        "packages/tsconfig-reference/copy/en/options/explainFiles.md",
+        "packages/tsconfig-reference/copy/en/options/extendedDiagnostics.md",
+        "packages/tsconfig-reference/copy/en/options/extends.md",
+        "packages/tsconfig-reference/copy/en/options/fallbackPolling.md",
+        "packages/tsconfig-reference/copy/en/options/files.md",
+        "packages/tsconfig-reference/copy/en/options/force.md",
+        "packages/tsconfig-reference/copy/en/options/forceConsistentCasingInFileNames.md",
+        "packages/tsconfig-reference/copy/en/options/generateCpuProfile.md",
+        "packages/tsconfig-reference/copy/en/options/generateTrace.md",
+        "packages/tsconfig-reference/copy/en/options/importHelpers.md",
+        "packages/tsconfig-reference/copy/en/options/importsNotUsedAsValues.md",
+        "packages/tsconfig-reference/copy/en/options/include.md",
+        "packages/tsconfig-reference/copy/en/options/incremental.md",
+        "packages/tsconfig-reference/copy/en/options/inlineSourceMap.md",
+        "packages/tsconfig-reference/copy/en/options/inlineSources.md",
+        "packages/tsconfig-reference/copy/en/options/isolatedDeclarations.md",
+        "packages/tsconfig-reference/copy/en/options/isolatedModules.md",
+        "packages/tsconfig-reference/copy/en/options/jsx.md",
+        "packages/tsconfig-reference/copy/en/options/jsxFactory.md",
+        "packages/tsconfig-reference/copy/en/options/jsxFragmentFactory.md",
+        "packages/tsconfig-reference/copy/en/options/jsxImportSource.md",
+        "packages/tsconfig-reference/copy/en/options/keyofStringsOnly.md",
+        "packages/tsconfig-reference/copy/en/options/lib.md",
+        "packages/tsconfig-reference/copy/en/options/libReplacement.md",
+        "packages/tsconfig-reference/copy/en/options/listEmittedFiles.md",
+        "packages/tsconfig-reference/copy/en/options/listFiles.md",
+        "packages/tsconfig-reference/copy/en/options/locale.md",
+        "packages/tsconfig-reference/copy/en/options/mapRoot.md",
+        "packages/tsconfig-reference/copy/en/options/maxNodeModuleJsDepth.md",
+        "packages/tsconfig-reference/copy/en/options/module.md",
+        "packages/tsconfig-reference/copy/en/options/moduleDetection.md",
+        "packages/tsconfig-reference/copy/en/options/moduleResolution.md",
+        "packages/tsconfig-reference/copy/en/options/moduleSuffixes.md",
+        "packages/tsconfig-reference/copy/en/options/newLine.md",
+        "packages/tsconfig-reference/copy/en/options/noCheck.md",
+        "packages/tsconfig-reference/copy/en/options/noEmit.md",
+        "packages/tsconfig-reference/copy/en/options/noEmitHelpers.md",
+        "packages/tsconfig-reference/copy/en/options/noEmitOnError.md",
+        "packages/tsconfig-reference/copy/en/options/noErrorTruncation.md",
+        "packages/tsconfig-reference/copy/en/options/noFallthroughCasesInSwitch.md",
+        "packages/tsconfig-reference/copy/en/options/noImplicitAny.md",
+        "packages/tsconfig-reference/copy/en/options/noImplicitOverride.md",
+        "packages/tsconfig-reference/copy/en/options/noImplicitReturns.md",
+        "packages/tsconfig-reference/copy/en/options/noImplicitThis.md",
+        "packages/tsconfig-reference/copy/en/options/noImplicitUseStrict.md",
+        "packages/tsconfig-reference/copy/en/options/noLib.md",
+        "packages/tsconfig-reference/copy/en/options/noPropertyAccessFromIndexSignature.md",
+        "packages/tsconfig-reference/copy/en/options/noResolve.md",
+        "packages/tsconfig-reference/copy/en/options/noStrictGenericChecks.md",
+        "packages/tsconfig-reference/copy/en/options/noUncheckedIndexedAccess.md",
+        "packages/tsconfig-reference/copy/en/options/noUncheckedSideEffectImports.md",
+        "packages/tsconfig-reference/copy/en/options/noUnusedLocals.md",
+        "packages/tsconfig-reference/copy/en/options/noUnusedParameters.md",
+        "packages/tsconfig-reference/copy/en/options/out.md",
+        "packages/tsconfig-reference/copy/en/options/outDir.md",
+        "packages/tsconfig-reference/copy/en/options/outFile.md",
+        "packages/tsconfig-reference/copy/en/options/paths.md",
+        "packages/tsconfig-reference/copy/en/options/plugins.md",
+        "packages/tsconfig-reference/copy/en/options/preserveConstEnums.md",
+        "packages/tsconfig-reference/copy/en/options/preserveSymlinks.md",
+        "packages/tsconfig-reference/copy/en/options/preserveValueImports.md",
+        "packages/tsconfig-reference/copy/en/options/preserveWatchOutput.md",
+        "packages/tsconfig-reference/copy/en/options/pretty.md",
+        "packages/tsconfig-reference/copy/en/options/reactNamespace.md",
+        "packages/tsconfig-reference/copy/en/options/references.md",
+        "packages/tsconfig-reference/copy/en/options/removeComments.md",
+        "packages/tsconfig-reference/copy/en/options/resolveJsonModule.md",
+        "packages/tsconfig-reference/copy/en/options/resolvePackageJsonExports.md",
+        "packages/tsconfig-reference/copy/en/options/resolvePackageJsonImports.md",
+        "packages/tsconfig-reference/copy/en/options/rewriteRelativeImportExtensions.md",
+        "packages/tsconfig-reference/copy/en/options/rootDir.md",
+        "packages/tsconfig-reference/copy/en/options/rootDirs.md",
+        "packages/tsconfig-reference/copy/en/options/skipDefaultLibCheck.md",
+        "packages/tsconfig-reference/copy/en/options/skipLibCheck.md",
+        "packages/tsconfig-reference/copy/en/options/sourceMap.md",
+        "packages/tsconfig-reference/copy/en/options/sourceRoot.md",
+        "packages/tsconfig-reference/copy/en/options/stopBuildOnErrors.md",
+        "packages/tsconfig-reference/copy/en/options/strict.md",
+        "packages/tsconfig-reference/copy/en/options/strictBindCallApply.md",
+        "packages/tsconfig-reference/copy/en/options/strictBuiltinIteratorReturn.md",
+        "packages/tsconfig-reference/copy/en/options/strictFunctionTypes.md",
+        "packages/tsconfig-reference/copy/en/options/strictNullChecks.md",
+        "packages/tsconfig-reference/copy/en/options/strictPropertyInitialization.md",
+        "packages/tsconfig-reference/copy/en/options/stripInternal.md",
+        "packages/tsconfig-reference/copy/en/options/suppressExcessPropertyErrors.md",
+        "packages/tsconfig-reference/copy/en/options/suppressImplicitAnyIndexErrors.md",
+        "packages/tsconfig-reference/copy/en/options/synchronousWatchDirectory.md",
+        "packages/tsconfig-reference/copy/en/options/target.md",
+        "packages/tsconfig-reference/copy/en/options/traceResolution.md",
+        "packages/tsconfig-reference/copy/en/options/tsBuildInfoFile.md",
+        "packages/tsconfig-reference/copy/en/options/typeAcquisition.md",
+        "packages/tsconfig-reference/copy/en/options/typeRoots.md",
+        "packages/tsconfig-reference/copy/en/options/types.md",
+        "packages/tsconfig-reference/copy/en/options/useDefineForClassFields.md",
+        "packages/tsconfig-reference/copy/en/options/useUnknownInCatchVariables.md",
+        "packages/tsconfig-reference/copy/en/options/verbatimModuleSyntax.md",
+        "packages/tsconfig-reference/copy/en/options/verbose.md",
+        "packages/tsconfig-reference/copy/en/options/watchDirectory.md",
+        "packages/tsconfig-reference/copy/en/options/watchFile.md"
+      ]
+    },
+    "refs/tsconfig-guide.md": {
+      "sha256": "2ba691e713874034ed41714e504e5ba9f65fd51e6efaea3b0b2c6abf35f540af",
+      "lines": 248,
+      "generatedFrom": [
+        "packages/documentation/copy/en/project-config/tsconfig.json.md",
+        "packages/documentation/copy/en/project-config/Compiler Options.md",
+        "packages/documentation/copy/en/project-config/Project References.md",
+        "packages/documentation/copy/en/project-config/Configuring Watch.md",
+        "packages/documentation/copy/en/project-config/Integrating with Build Tools.md",
+        "packages/documentation/copy/en/modules-reference/guides/Choosing Compiler Options.md"
+      ]
+    },
+    "refs/project-templates.md": {
+      "sha256": "35abfef8dc0a4603028e7899571488cad9e3fc4107b6f1c503491c81c5ba8dab",
+      "lines": 130,
+      "generatedFrom": [
+        "packages/documentation/copy/en/project-config/tsconfig.json.md",
+        "packages/documentation/copy/en/project-config/Compiler Options.md",
+        "packages/tsconfig-reference/copy/en/options/allowArbitraryExtensions.md",
+        "packages/tsconfig-reference/copy/en/options/allowImportingTsExtensions.md",
+        "packages/tsconfig-reference/copy/en/options/allowJs.md",
+        "packages/tsconfig-reference/copy/en/options/allowSyntheticDefaultImports.md",
+        "packages/tsconfig-reference/copy/en/options/allowUmdGlobalAccess.md",
+        "packages/tsconfig-reference/copy/en/options/allowUnreachableCode.md",
+        "packages/tsconfig-reference/copy/en/options/allowUnusedLabels.md",
+        "packages/tsconfig-reference/copy/en/options/alwaysStrict.md",
+        "packages/tsconfig-reference/copy/en/options/assumeChangesOnlyAffectDirectDependencies.md",
+        "packages/tsconfig-reference/copy/en/options/baseUrl.md",
+        "packages/tsconfig-reference/copy/en/options/charset.md",
+        "packages/tsconfig-reference/copy/en/options/checkJs.md",
+        "packages/tsconfig-reference/copy/en/options/clean.md",
+        "packages/tsconfig-reference/copy/en/options/composite.md",
+        "packages/tsconfig-reference/copy/en/options/customConditions.md",
+        "packages/tsconfig-reference/copy/en/options/declaration.md",
+        "packages/tsconfig-reference/copy/en/options/declarationDir.md",
+        "packages/tsconfig-reference/copy/en/options/declarationMap.md",
+        "packages/tsconfig-reference/copy/en/options/diagnostics.md",
+        "packages/tsconfig-reference/copy/en/options/disableFilenameBasedTypeAcquisition.md",
+        "packages/tsconfig-reference/copy/en/options/disableReferencedProjectLoad.md",
+        "packages/tsconfig-reference/copy/en/options/disableSizeLimit.md",
+        "packages/tsconfig-reference/copy/en/options/disableSolutionSearching.md",
+        "packages/tsconfig-reference/copy/en/options/disableSourceOfProjectReferenceRedirect.md",
+        "packages/tsconfig-reference/copy/en/options/downlevelIteration.md",
+        "packages/tsconfig-reference/copy/en/options/emitBOM.md",
+        "packages/tsconfig-reference/copy/en/options/emitDeclarationOnly.md",
+        "packages/tsconfig-reference/copy/en/options/emitDecoratorMetadata.md",
+        "packages/tsconfig-reference/copy/en/options/enable.md",
+        "packages/tsconfig-reference/copy/en/options/erasableSyntaxOnly.md",
+        "packages/tsconfig-reference/copy/en/options/esModuleInterop.md",
+        "packages/tsconfig-reference/copy/en/options/exactOptionalPropertyTypes.md",
+        "packages/tsconfig-reference/copy/en/options/exclude.md",
+        "packages/tsconfig-reference/copy/en/options/excludeDirectories.md",
+        "packages/tsconfig-reference/copy/en/options/excludeFiles.md",
+        "packages/tsconfig-reference/copy/en/options/experimentalDecorators.md",
+        "packages/tsconfig-reference/copy/en/options/explainFiles.md",
+        "packages/tsconfig-reference/copy/en/options/extendedDiagnostics.md",
+        "packages/tsconfig-reference/copy/en/options/extends.md",
+        "packages/tsconfig-reference/copy/en/options/fallbackPolling.md",
+        "packages/tsconfig-reference/copy/en/options/files.md",
+        "packages/tsconfig-reference/copy/en/options/force.md",
+        "packages/tsconfig-reference/copy/en/options/forceConsistentCasingInFileNames.md",
+        "packages/tsconfig-reference/copy/en/options/generateCpuProfile.md",
+        "packages/tsconfig-reference/copy/en/options/generateTrace.md",
+        "packages/tsconfig-reference/copy/en/options/importHelpers.md",
+        "packages/tsconfig-reference/copy/en/options/importsNotUsedAsValues.md",
+        "packages/tsconfig-reference/copy/en/options/include.md",
+        "packages/tsconfig-reference/copy/en/options/incremental.md",
+        "packages/tsconfig-reference/copy/en/options/inlineSourceMap.md",
+        "packages/tsconfig-reference/copy/en/options/inlineSources.md",
+        "packages/tsconfig-reference/copy/en/options/isolatedDeclarations.md",
+        "packages/tsconfig-reference/copy/en/options/isolatedModules.md",
+        "packages/tsconfig-reference/copy/en/options/jsx.md",
+        "packages/tsconfig-reference/copy/en/options/jsxFactory.md",
+        "packages/tsconfig-reference/copy/en/options/jsxFragmentFactory.md",
+        "packages/tsconfig-reference/copy/en/options/jsxImportSource.md",
+        "packages/tsconfig-reference/copy/en/options/keyofStringsOnly.md",
+        "packages/tsconfig-reference/copy/en/options/lib.md",
+        "packages/tsconfig-reference/copy/en/options/libReplacement.md",
+        "packages/tsconfig-reference/copy/en/options/listEmittedFiles.md",
+        "packages/tsconfig-reference/copy/en/options/listFiles.md",
+        "packages/tsconfig-reference/copy/en/options/locale.md",
+        "packages/tsconfig-reference/copy/en/options/mapRoot.md",
+        "packages/tsconfig-reference/copy/en/options/maxNodeModuleJsDepth.md",
+        "packages/tsconfig-reference/copy/en/options/module.md",
+        "packages/tsconfig-reference/copy/en/options/moduleDetection.md",
+        "packages/tsconfig-reference/copy/en/options/moduleResolution.md",
+        "packages/tsconfig-reference/copy/en/options/moduleSuffixes.md",
+        "packages/tsconfig-reference/copy/en/options/newLine.md",
+        "packages/tsconfig-reference/copy/en/options/noCheck.md",
+        "packages/tsconfig-reference/copy/en/options/noEmit.md",
+        "packages/tsconfig-reference/copy/en/options/noEmitHelpers.md",
+        "packages/tsconfig-reference/copy/en/options/noEmitOnError.md",
+        "packages/tsconfig-reference/copy/en/options/noErrorTruncation.md",
+        "packages/tsconfig-reference/copy/en/options/noFallthroughCasesInSwitch.md",
+        "packages/tsconfig-reference/copy/en/options/noImplicitAny.md",
+        "packages/tsconfig-reference/copy/en/options/noImplicitOverride.md",
+        "packages/tsconfig-reference/copy/en/options/noImplicitReturns.md",
+        "packages/tsconfig-reference/copy/en/options/noImplicitThis.md",
+        "packages/tsconfig-reference/copy/en/options/noImplicitUseStrict.md",
+        "packages/tsconfig-reference/copy/en/options/noLib.md",
+        "packages/tsconfig-reference/copy/en/options/noPropertyAccessFromIndexSignature.md",
+        "packages/tsconfig-reference/copy/en/options/noResolve.md",
+        "packages/tsconfig-reference/copy/en/options/noStrictGenericChecks.md",
+        "packages/tsconfig-reference/copy/en/options/noUncheckedIndexedAccess.md",
+        "packages/tsconfig-reference/copy/en/options/noUncheckedSideEffectImports.md",
+        "packages/tsconfig-reference/copy/en/options/noUnusedLocals.md",
+        "packages/tsconfig-reference/copy/en/options/noUnusedParameters.md",
+        "packages/tsconfig-reference/copy/en/options/out.md",
+        "packages/tsconfig-reference/copy/en/options/outDir.md",
+        "packages/tsconfig-reference/copy/en/options/outFile.md",
+        "packages/tsconfig-reference/copy/en/options/paths.md",
+        "packages/tsconfig-reference/copy/en/options/plugins.md",
+        "packages/tsconfig-reference/copy/en/options/preserveConstEnums.md",
+        "packages/tsconfig-reference/copy/en/options/preserveSymlinks.md",
+        "packages/tsconfig-reference/copy/en/options/preserveValueImports.md",
+        "packages/tsconfig-reference/copy/en/options/preserveWatchOutput.md",
+        "packages/tsconfig-reference/copy/en/options/pretty.md",
+        "packages/tsconfig-reference/copy/en/options/reactNamespace.md",
+        "packages/tsconfig-reference/copy/en/options/references.md",
+        "packages/tsconfig-reference/copy/en/options/removeComments.md",
+        "packages/tsconfig-reference/copy/en/options/resolveJsonModule.md",
+        "packages/tsconfig-reference/copy/en/options/resolvePackageJsonExports.md",
+        "packages/tsconfig-reference/copy/en/options/resolvePackageJsonImports.md",
+        "packages/tsconfig-reference/copy/en/options/rewriteRelativeImportExtensions.md",
+        "packages/tsconfig-reference/copy/en/options/rootDir.md",
+        "packages/tsconfig-reference/copy/en/options/rootDirs.md",
+        "packages/tsconfig-reference/copy/en/options/skipDefaultLibCheck.md",
+        "packages/tsconfig-reference/copy/en/options/skipLibCheck.md",
+        "packages/tsconfig-reference/copy/en/options/sourceMap.md",
+        "packages/tsconfig-reference/copy/en/options/sourceRoot.md",
+        "packages/tsconfig-reference/copy/en/options/stopBuildOnErrors.md",
+        "packages/tsconfig-reference/copy/en/options/strict.md",
+        "packages/tsconfig-reference/copy/en/options/strictBindCallApply.md",
+        "packages/tsconfig-reference/copy/en/options/strictBuiltinIteratorReturn.md",
+        "packages/tsconfig-reference/copy/en/options/strictFunctionTypes.md",
+        "packages/tsconfig-reference/copy/en/options/strictNullChecks.md",
+        "packages/tsconfig-reference/copy/en/options/strictPropertyInitialization.md",
+        "packages/tsconfig-reference/copy/en/options/stripInternal.md",
+        "packages/tsconfig-reference/copy/en/options/suppressExcessPropertyErrors.md",
+        "packages/tsconfig-reference/copy/en/options/suppressImplicitAnyIndexErrors.md",
+        "packages/tsconfig-reference/copy/en/options/synchronousWatchDirectory.md",
+        "packages/tsconfig-reference/copy/en/options/target.md",
+        "packages/tsconfig-reference/copy/en/options/traceResolution.md",
+        "packages/tsconfig-reference/copy/en/options/tsBuildInfoFile.md",
+        "packages/tsconfig-reference/copy/en/options/typeAcquisition.md",
+        "packages/tsconfig-reference/copy/en/options/typeRoots.md",
+        "packages/tsconfig-reference/copy/en/options/types.md",
+        "packages/tsconfig-reference/copy/en/options/useDefineForClassFields.md",
+        "packages/tsconfig-reference/copy/en/options/useUnknownInCatchVariables.md",
+        "packages/tsconfig-reference/copy/en/options/verbatimModuleSyntax.md",
+        "packages/tsconfig-reference/copy/en/options/verbose.md",
+        "packages/tsconfig-reference/copy/en/options/watchDirectory.md",
+        "packages/tsconfig-reference/copy/en/options/watchFile.md"
+      ]
+    },
+    "refs/modules-and-namespaces.md": {
+      "sha256": "7b4091d572ce08a024d4c9b17d2f1161d091d056bb64620d63cc10a3a3ba259d",
+      "lines": 212,
+      "generatedFrom": [
+        "packages/documentation/copy/en/handbook-v2/Modules.md",
+        "packages/documentation/copy/en/modules-reference/Introduction.md",
+        "packages/documentation/copy/en/modules-reference/Theory.md",
+        "packages/documentation/copy/en/modules-reference/Reference.md",
+        "packages/documentation/copy/en/reference/Namespaces.md",
+        "packages/documentation/copy/en/reference/Namespaces and Modules.md"
+      ]
+    },
+    "refs/functions-and-classes.md": {
+      "sha256": "e97eac6fab0acb4b482e858089f56d34b3271ed3dede4f7f5776b31a8038e8ee",
+      "lines": 124,
+      "generatedFrom": [
+        "packages/documentation/copy/en/handbook-v2/More on Functions.md",
+        "packages/documentation/copy/en/handbook-v2/Classes.md",
+        "packages/documentation/copy/en/handbook-v2/Type Manipulation/Generics.md"
+      ]
+    },
+    "refs/declaration-files.md": {
+      "sha256": "866bca5838d843173b84b8b887917097c97ba6ce8a2beb5ac5ac5744db74965d",
+      "lines": 200,
+      "generatedFrom": [
+        "packages/documentation/copy/en/declaration-files/Introduction.md",
+        "packages/documentation/copy/en/declaration-files/By Example.md",
+        "packages/documentation/copy/en/declaration-files/Do's and Don'ts.md",
+        "packages/documentation/copy/en/declaration-files/Deep Dive.md",
+        "packages/documentation/copy/en/declaration-files/Library Structures.md",
+        "packages/documentation/copy/en/declaration-files/Publishing.md",
+        "packages/documentation/copy/en/declaration-files/Consumption.md"
+      ]
+    },
+    "refs/code-review-checklist.md": {
+      "sha256": "7046b8464c0b1f78d8220f01d9a78cfec908d67a0d9c96a8fa7e2fcad3e69095",
+      "lines": 42,
+      "generatedFrom": [
+        "packages/documentation/copy/en/handbook-v2/Basics.md",
+        "packages/documentation/copy/en/handbook-v2/Narrowing.md",
+        "packages/documentation/copy/en/handbook-v2/Everyday Types.md",
+        "packages/documentation/copy/en/reference/Utility Types.md",
+        "packages/documentation/copy/en/declaration-files/Do's and Don'ts.md",
+        "packages/documentation/copy/en/reference/Enums.md",
+        "packages/documentation/copy/en/reference/Decorators.md"
+      ]
+    }
+  }
+}

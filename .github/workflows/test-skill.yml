@@ -1,0 +1,51 @@
+name: Test TypeScript Skill
+
+on:
+  pull_request:
+    paths:
+      - ".claude/skills/typescript/**"
+      - "build/**"
+      - "test/**"
+      - "manifest.json"
+      - "package.json"
+  push:
+    branches: [main]
+
+jobs:
+  structural:
+    name: Structural Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: microsoft/TypeScript-Website
+          path: TypeScript-Website
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm ci
+
+      - name: Run structural tests
+        run: npx vitest run test/structural/
+
+  eval:
+    name: Evaluation Tests
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' || contains(github.event.pull_request.labels.*.name, 'run-eval')
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm ci
+
+      - name: Run evaluation tests
+        run: npx tsx test/eval/runner.ts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}

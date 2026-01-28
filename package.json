@@ -1,0 +1,22 @@
+{
+  "name": "docs-to-skills",
+  "version": "1.0.0",
+  "description": "Build Claude Code skills from official documentation sources",
+  "type": "module",
+  "scripts": {
+    "build": "tsx build/src/index.ts --build",
+    "check": "tsx build/src/index.ts --check",
+    "diff": "tsx build/src/index.ts --diff",
+    "test": "vitest run test/structural/",
+    "test:eval": "tsx test/eval/runner.ts",
+    "test:all": "vitest run test/structural/ && tsx test/eval/runner.ts"
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "glob": "^11.0.0",
+    "gray-matter": "^4.0.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

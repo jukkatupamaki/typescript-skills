@@ -1,0 +1,5 @@
+node_modules/
+dist/
+TypeScript-Website/
+*.tsbuildinfo
+.DS_Store
